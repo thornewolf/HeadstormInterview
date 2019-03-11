@@ -1,0 +1,26 @@
+<script src="https://www.google.com/recaptcha/api.js?render=6Ld9wpYUAAAAALBEw2rlwOyO0EKxT5nyD795kiKI"></script>
+<script>
+grecaptcha.ready(function() {
+    grecaptcha.execute('6Ld9wpYUAAAAALBEw2rlwOyO0EKxT5nyD795kiKI', {action: 'homepage'}).then(function(token) {
+      var recaptchaResponse = document.getElementById('recaptchaResponse');
+      recaptchaResponse.value = token;
+    });
+});
+</script>
+<title>ZOMBOCOM</title>
+<link rel="shortcut icon" href="https://i.ytimg.com/vi/qxWwEPeUuAg/hqdefault.jpg"/>
+<h1>Welcome to our startup: ZOMBOCOM</h1>
+<body>
+{% if score %}
+  Congrats you had a score of {{score}}
+  <script>
+    console.log('{{name}}')
+  </script>
+{% endif %}
+</body>
+<form method="POST">
+                <text>Contact Us!</text><br>
+                What is your name: <input type="text" name="name"><br>
+                <input type="submit" value="Submit" onclick="console.log(this.form.name.value);console.log(this.form.recaptcha_response.value)"><br>
+                <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+</form>
